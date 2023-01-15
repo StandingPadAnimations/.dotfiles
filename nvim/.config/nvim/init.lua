@@ -38,6 +38,7 @@ require('packer').startup(function(use)
       "williamboman/nvim-lsp-installer"
     }
   }
+  use {"ellisonleao/glow.nvim"} -- markdown preview
   
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
