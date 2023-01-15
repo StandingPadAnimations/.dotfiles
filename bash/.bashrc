@@ -47,3 +47,5 @@ alias pacdiff=eos-pacdiff
 ################################################################################
 
 . "$HOME/.cargo/env"
+
+eval "$(starship init bash)"
