@@ -36,6 +36,7 @@ whitelist /usr/share/gnome-shell/search-providers/firefox-search-provider.ini
 whitelist /usr/share/gtk-doc/html
 whitelist /usr/share/mozilla
 whitelist /usr/share/webext
+whitelist ${HOME}/Pictures
 whitelist ${RUNUSER}/*firefox*
 include whitelist-usr-share-common.inc
 
