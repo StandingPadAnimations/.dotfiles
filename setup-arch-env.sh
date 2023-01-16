@@ -1,6 +1,5 @@
 #! /usr/bin/bash
 
-cd ~ # Go to the home directory before executing everything
 sudo pacman -S stow
 echo "Setting up Bash Shell"
 pacman -S starship # Install starship
@@ -67,4 +66,11 @@ then
 	pacman -S wl-clipboard
 	yay -S safeeyes
 	yay -S avizo
+fi
+
+read -p "Set up Gimp? [y/N]: " gimp_opt
+if [ $gimp_opt = "y" ]
+then 
+	pacman -S gimp
+	stow gimp
 fi
