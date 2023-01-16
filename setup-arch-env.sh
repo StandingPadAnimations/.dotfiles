@@ -1,7 +1,18 @@
 #! /usr/bin/bash
-sudo pacman -S stow
 
+cd ~ # Go to the home directory before executing everything
+sudo pacman -S stow
 echo "Setting up Bash Shell"
+pacman -S starship # Install starship
+
+# Install nerd font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/BigBlueTerminal.zip
+mkdir -p ~/.local/share/fonts/nerd-fonts
+unzip BigBlueTerminal.zip -d ~/.local/share/fonts/nerd-fonts
+rm -f BigBlueTerminal.zip # Force it just in case
+
+# Update cache
+fc-cache -fv
 stow bash/
 
 # Firejail
