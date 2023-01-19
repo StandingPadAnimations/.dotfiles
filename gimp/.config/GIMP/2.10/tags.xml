@@ -1423,7 +1423,7 @@
   <resource identifier="${gimp_data_dir}/gradients/Yellow_Orange.ggr" checksum="428584726006e23e260baa2a7d79f295">
   </resource>
 
-  <resource identifier="gimp-palette-color-history" checksum="d8225955a2816cc9163e3007b116f865">
+  <resource identifier="gimp-palette-color-history" checksum="1bc44ca31a539319a8fc1bb1b308a86f">
   </resource>
 
   <resource identifier="${gimp_data_dir}/palettes/Bears.gpl" checksum="e82e818c20ac12bdd21049924ea2d1e7">
