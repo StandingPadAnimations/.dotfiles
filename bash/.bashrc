@@ -33,7 +33,8 @@ ShowInstallerIsoInfo() {
 
 alias lsd-tree="lsd --all --tree"
 alias lsd-all="lsd --all"
-alias yeet="sudo aura -R"
+alias yeet="sudo aura -Rs"
+alias aur-syu="sudo aura -Akuax"
 
 [[ "$(whoami)" = "root" ]] && return
 
