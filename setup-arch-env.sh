@@ -22,6 +22,12 @@ rm -f BigBlueTerminal.zip # Force it just in case
 fc-cache -fv
 stow bash/
 
+read -p "Set up browser? [y/n]: " librewolf_opt
+if [ $librewolf_opt = "y" ]
+then 
+	aura -A librewolf-bin
+fi
+
 # Firejail
 read -p "Set up Firejail? [y/N]: " firejail_opt
 if [ $firejail_opt = "y" ] 
