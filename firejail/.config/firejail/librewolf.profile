@@ -16,14 +16,15 @@ include globals.local
 
 noblacklist ${HOME}/.cache/mozilla
 noblacklist ${HOME}/.mozilla
-noblacklist ${RUNUSER}/*firefox*
+noblacklist ${RUNUSER}/*firefox
+noblacklist ${HOME}/.librewolf
 
 blacklist /usr/libexec
 
 mkdir ${HOME}/.cache/mozilla/firefox
 mkdir ${HOME}/.mozilla
 whitelist ${HOME}/.cache/mozilla/firefox
-whitelist ${HOME}/.mozilla
+whitelist ${HOME}/.librewolf
 
 # Add one of the following whitelist options to your firefox.local to enable KeePassXC Plugin support.
 # NOTE: start KeePassXC before Firefox and keep it open to allow communication between them.
