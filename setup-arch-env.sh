@@ -11,6 +11,7 @@ sudo aura -S stow
 echo "Setting up Bash Shell"
 aura -S starship # Install starship
 aura -S lsd # Install lsd, the better ls command
+aura -S bat # Install bat, the better cat command
 
 # Install nerd font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/BigBlueTerminal.zip
@@ -70,7 +71,12 @@ then
 	# Waybar
 	aura -A waybar-hyprland-git
 	stow waybar/
-
+	
+	# Avizo
+	aura -S brightnessctl
+	aura -S pamixer
+	aura -A avizo
+	
 	# Everything else
 	aura -S dunst
 	aura -S polkit-kde-agent
@@ -79,7 +85,6 @@ then
 	aura -S slurp
 	aura -S wl-clipboard
 	aura -A safeeyes
-	aura -A avizo
 fi
 
 read -p "Set up Gimp? [y/N]: " gimp_opt
