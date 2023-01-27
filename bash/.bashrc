@@ -30,9 +30,10 @@ ShowInstallerIsoInfo() {
     fi
 }
 
-
-alias lsd-tree="lsd --all --tree"
-alias lsd-all="lsd --all"
+alias ls="lsd"
+alias ls-tree="lsd --all --tree"
+alias ls-all="lsd --all"
+alias cat="bat"
 alias yeet="sudo aura -Rs"
 alias aur-syu="sudo aura -Akuax"
 
