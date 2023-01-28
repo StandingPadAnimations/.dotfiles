@@ -111,3 +111,7 @@ alias aur-syu="sudo aura -Akuax"
 . "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+if [ `tput colors` != "256" ]; then
+  exec bash -l;
+fi
