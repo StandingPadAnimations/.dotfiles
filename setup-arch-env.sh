@@ -23,6 +23,14 @@ rm -f BigBlueTerminal.zip # Force it just in case
 fc-cache -fv
 stow bash/
 
+read -p "Set up Zsh? [y/n]: " zsh_opt
+if [ $zsh_opt = "y" ]
+then 
+	aura -S zsh, zsh-syntax-highlighting, zsh-autosuggestions
+	sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+	stow zsh/
+fi
+
 read -p "Set up browser? [y/n]: " librewolf_opt
 if [ $librewolf_opt = "y" ]
 then 

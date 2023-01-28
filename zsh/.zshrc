@@ -109,3 +109,5 @@ alias yeet="sudo aura -Rs"
 alias aur-syu="sudo aura -Akuax"
 
 . "$HOME/.cargo/env"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
