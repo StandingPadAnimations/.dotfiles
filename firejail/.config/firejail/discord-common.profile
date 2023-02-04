@@ -21,6 +21,7 @@ ignore noexec ${HOME}
 ignore novideo
 
 whitelist ${HOME}/.config/Vencord
+whitelist ${HOME}/Documents
 whitelist ${HOME}/.local/share/betterdiscordctl
 
 private-bin awk,bash,cut,echo,egrep,electron,electron[0-9],electron[0-9][0-9],fish,grep,head,sed,sh,tclsh,tr,which,xdg-mime,xdg-open,zsh
