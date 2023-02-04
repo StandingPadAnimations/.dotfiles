@@ -13,6 +13,7 @@ aura -S starship # Install starship
 aura -S lsd # Install lsd, the better ls command
 aura -S bat # Install bat, the better cat command
 aura -S zoxide # Install zoxide, the better cd command
+aura -S sshpass
 
 # Install nerd font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/BigBlueTerminal.zip
