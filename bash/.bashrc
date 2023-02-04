@@ -35,7 +35,6 @@ alias ls-tree="lsd --all --tree"
 alias ls-all="lsd --all"
 alias cat="bat"
 alias yeet="sudo aura -Rs"
-alias aur-syu="sudo aura -Akuax"
 
 [[ "$(whoami)" = "root" ]] && return
 
