@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages rust)
+plugins=(git colored-man-pages rust)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,7 +108,7 @@ alias ls-tree="lsd --all --tree"
 alias ls-all="lsd --all"
 alias cat="bat"
 alias cd="z"
-alias yeet="sudo aura -Rs"
+alias yeet="sudo pacman -Rs"
 
 . "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
