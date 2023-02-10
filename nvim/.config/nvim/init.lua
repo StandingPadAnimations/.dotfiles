@@ -31,27 +31,15 @@ require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'                                                      -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim'                                            -- Add indentation guides even on blank lines
   use 'tpope/vim-sleuth'                                                               -- Detect tabstop and shiftwidth automatically
-  use {
-    "brymer-meneses/grammar-guard.nvim",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "williamboman/nvim-lsp-installer"
-    }
-  }
   use {"ellisonleao/glow.nvim"} -- markdown preview
   
   -- Fuzzy Finder (files, lsp, etc)
+  use "nvim-lua/plenary.nvim"
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
+  use 'jose-elias-alvarez/null-ls.nvim'
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
-
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-  }
 
   use {
     's1n7ax/nvim-terminal',
@@ -68,21 +56,8 @@ require('packer').startup(function(use)
 
   -- lazygit
   use {
-   "kdheepak/lazygit.nvim" 
+   "kdheepak/lazygit.nvim"
   }
-  
-  -- Trouble
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-      }
-    end
-  }
-  if is_bootstrap then
-    require('packer').sync()
-  end
 end)
 -- stylua: ignore end
 
@@ -169,6 +144,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+      null_ls.builtins.code_actions.ltrs
+    },
+})
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
@@ -182,7 +164,6 @@ require('lualine').setup {
 -- GrammerGuard: hook to nvim-lspconfig
 require("grammar-guard").init()
 
-require("nvim-tree").setup()
 -- Enable Comment.nvim
 require('Comment').setup()
 
