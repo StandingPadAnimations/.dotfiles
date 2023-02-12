@@ -109,8 +109,6 @@ alias ls-all="lsd --all"
 alias cat="bat"
 alias cd="z"
 alias yeet="sudo pacman -Rs"
-alias sudo="doas"
-alias sudoedit="doasedit"
 
 . "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
