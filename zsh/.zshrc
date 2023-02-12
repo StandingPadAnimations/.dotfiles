@@ -108,7 +108,8 @@ alias ls-tree="lsd --all --tree"
 alias ls-all="lsd --all"
 alias cat="bat"
 alias cd="z"
-alias yeet="sudo pacman -Rs"
+alias yeet="doas pacman -Rs"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 . "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
