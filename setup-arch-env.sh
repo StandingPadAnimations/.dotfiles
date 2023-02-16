@@ -7,13 +7,13 @@ then
     exit
 fi
 
-sudo aura -S stow
+yes | sudo pacman -S stow
 echo "Setting up shell"
-sudo aura -S starship # Install starship
-sudo aura -S lsd # Install lsd, the better ls command
-sudo aura -S bat # Install bat, the better cat command
-sudo aura -S zoxide # Install zoxide, the better cd command
-sudo aura -S sshpass
+yes | sudo pacman -S starship # Install starship
+yes | sudo pacman -S lsd # Install lsd, the better ls command
+yes | sudo pacman -S bat # Install bat, the better cat command
+yes | sudo pacman -S zoxide # Install zoxide, the better cd command
+yes | sudo pacman -S sshpass
 
 # Install nerd font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/BigBlueTerminal.zip
@@ -28,7 +28,7 @@ stow bash/
 read -p "Set up Zsh? [y/n]: " zsh_opt
 if [ $zsh_opt = "y" ]
 then 
-	sudo aura -S zsh, zsh-syntax-highlighting, zsh-autosuggestions
+	yes | sudo pacman -S zsh, zsh-syntax-highlighting, zsh-autosuggestions
 	sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 	stow zsh/
 fi
@@ -36,14 +36,14 @@ fi
 read -p "Set up browser? [y/n]: " librewolf_opt
 if [ $librewolf_opt = "y" ]
 then 
-	sudo aura -A librewolf-bin
+	sudo aura -Axa librewolf-bin
 fi
 
 # Firejail
 read -p "Set up Firejail? [y/N]: " firejail_opt
 if [ $firejail_opt = "y" ] 
 then 
-	sudo aura -S firejail
+	yes | sudo pacman -S firejail
 	stow firejail/
 fi
 
@@ -51,8 +51,8 @@ fi
 read -p "Set up Zathura? [y/N]: " zathura_opt
 if [ $zathura_opt = "y" ]
 then 
-	sudo aura -S zathura
-	sudo aura -S zathura-pdf-mupdf
+	yes | sudo pacman -S zathura
+	yes | sudo pacman -S zathura-pdf-mupdf
 	stow zathura/
 fi
 
@@ -60,7 +60,7 @@ fi
 read -p "Set up Neovim? [y/N]: " nvim_opt
 if [ $nvim_opt = "y" ]
 then 
-	sudo sudo aura -S neovim
+	sudo yes | sudo pacman -S neovim
 	stow nvim/
 fi
 
@@ -69,38 +69,38 @@ read -p "Set up desktop? [y/N]: " desktop_opt
 if [ $desktop_opt = "y" ]
 then 
 	# Kitty
-	sudo aura -S kitty
+	yes | sudo pacman -S kitty
 	stow kitty/
 
 	# Hyprland
-	sudo aura -A hyprland
-	sudo aura -A hyprpaper-git
-	sudo aura -A xdg-desktop-portal-hyprland-git
+	sudo aura -Axa hyprland
+	sudo aura -Axa hyprpaper-git
+	sudo aura -Axa xdg-desktop-portal-hyprland-git
 	stow hypr/
 	sudo stow wrappedhl -t / 
 	
 	# Waybar
-	sudo aura -A waybar-hyprland-git
+	sudo aura -Axa waybar-hyprland-git
 	stow waybar/
 	
 	# Avizo
-	sudo aura -S brightnessctl
-	sudo aura -S pamixer
-	sudo aura -A avizo
+	yes | sudo pacman -S brightnessctl
+	yes | sudo pacman -S pamixer
+	sudo aura -Axa avizo
 	
 	# Everything else
-	sudo aura -S dunst
-	sudo aura -S polkit-kde-agent
-	sudo aura -S swaylock
-	sudo aura -S grim
-	sudo aura -S slurp
-	sudo aura -S wl-clipboard
-	sudo aura -A safeeyes
+	yes | sudo pacman -S dunst
+	yes | sudo pacman -S polkit-kde-agent
+	yes | sudo pacman -S swaylock
+	yes | sudo pacman -S grim
+	yes | sudo pacman -S slurp
+	yes | sudo pacman -S wl-clipboard
+	sudo aura -Axa safeeyes
 fi
 
 read -p "Set up Gimp? [y/N]: " gimp_opt
 if [ $gimp_opt = "y" ]
 then 
-	sudo aura -S gimp
+	yes | sudo pacman -S gimp
 	stow gimp
 fi
