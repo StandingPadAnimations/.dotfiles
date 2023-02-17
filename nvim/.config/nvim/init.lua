@@ -14,6 +14,11 @@ vim.g.loaded_netrwPlugin = 1
 
 -- stylua: ignore start
 require('packer').startup(function(use)
+  -- firenvim
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end 
+  }
   use 'wbthomason/packer.nvim'                                                         -- Package manager
   use 'tpope/vim-fugitive'                                                             -- Git commands in nvim
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
@@ -161,9 +166,6 @@ require('lualine').setup {
     section_separators = '',
   },
 }
--- GrammerGuard: hook to nvim-lspconfig
-require("grammar-guard").init()
-
 -- Enable Comment.nvim
 require('Comment').setup()
 
@@ -343,7 +345,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls' }
 
 require('lspconfig').pyright.setup{
   on_attach = on_attach,
@@ -389,7 +391,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
