@@ -104,10 +104,11 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 alias ls="lsd"
-alias ls-tree="lsd --all --tree"
+alias tree="lsd --all --tree"
 alias ls-all="lsd --all"
 alias cat="bat"
 alias cd="z"
+alias grep="rg"
 alias yeet="doas pacman -Rs"
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
