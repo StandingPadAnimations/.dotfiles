@@ -345,7 +345,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls', 'bashls' }
 
 require('lspconfig').pyright.setup{
   on_attach = on_attach,
