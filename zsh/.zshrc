@@ -110,8 +110,6 @@ alias cat="bat"
 alias cd="z"
 alias grep="rg"
 alias yeet="doas pacman -Rs"
-alias shutdown="systemctl poweroff"
-alias reboot="systemctl reboot"
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
@@ -123,4 +121,5 @@ if [ `tput colors` != "256" ]; then
   exec bash -l;
 fi
 
-PATH=$PATH:"/home/mahid/.local/bin"
+autoload bashcompinit
+bashcompinit
