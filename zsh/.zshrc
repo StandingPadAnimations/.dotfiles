@@ -111,7 +111,7 @@ alias cd="z"
 alias grep="rg"
 alias yeet="doas pacman -Rs"
 
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-256color" ]
 
 . "$HOME/.cargo/env"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
