@@ -12,13 +12,13 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+packer = require 'packer'
+packer.init {
+  max_jobs = 10
+}
+
 -- stylua: ignore start
-require('packer').startup(function(use)
-  -- firenvim
-  use {
-    'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end 
-  }
+require('packer').startup({function(use)
   use 'wbthomason/packer.nvim'                                                         -- Package manager
   use 'tpope/vim-fugitive'                                                             -- Git commands in nvim
   use 'tpope/vim-rhubarb'                                                              -- Fugitive-companion to interact with github
@@ -37,7 +37,6 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'                                            -- Add indentation guides even on blank lines
   use 'tpope/vim-sleuth'                                                               -- Detect tabstop and shiftwidth automatically
   use {"ellisonleao/glow.nvim"} -- markdown preview
-  
   -- Fuzzy Finder (files, lsp, etc)
   use "nvim-lua/plenary.nvim"
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -59,11 +58,7 @@ require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
 
-  -- lazygit
-  use {
-   "kdheepak/lazygit.nvim"
-  }
-end)
+end})
 -- stylua: ignore end
 
 -- When we are bootstrapping a configuration, it doesn't
@@ -416,8 +411,6 @@ require('lspconfig').lua_ls.setup {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
--- Keybind for lazygit
-vim.keymap.set('n', '<Leader>gg', ':LazyGit<CR>')
 vim.keymap.set('n', '<Leader>y', '"+y')
 vim.keymap.set('n', '<Leader>p', '"+p')
 cmp.setup {
