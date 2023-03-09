@@ -20,6 +20,7 @@ export XDG_CONFIG_HOME=/home/mahid/.config
 # Editors
 export VISUAL=nvim
 export EDITOR=nvim
+export AUR_PAGER=clifm
 
 exec Hyprland
 
