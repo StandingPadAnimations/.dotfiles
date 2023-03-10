@@ -123,3 +123,4 @@ fi
 
 autoload bashcompinit
 bashcompinit
+source .profile
