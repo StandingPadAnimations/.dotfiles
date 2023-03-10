@@ -126,6 +126,12 @@ vim.g.maplocalleader = ' '
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- Git
+
+vim.keymap.set("n", "<leader>ga", ":Git add")
+vim.keymap.set("n", "<leader>gc", ':Git commit<CR>')
+vim.keymap.set("n", '<leader>gp', ':Git push<CR>')
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -340,7 +346,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason').setup()
 
 -- Enable the following language servers
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls', 'bashls' }
+local servers = { 'clangd', 'rust_analyzer', 'tsserver', 'lua_ls', 'bashls' }
 
 require('lspconfig').pyright.setup{
   on_attach = on_attach,
@@ -358,27 +364,29 @@ require('mason-lspconfig').setup {
 }
 
 for _, lsp in ipairs(servers) do
-  if (lsp == 'pyright')
-  then
-    require('lspconfig').pyright.setup{
-    on_attach = on_attach,
-    settings = {
-      python = {
-        analysis = {
-          typeCheckingMode = "off"
-          }
-        }
-      }
-    }
-    goto continue
-  end
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
-  ::continue::
 end
 
+
+require('lspconfig').pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        flake8 = {
+          enabled = true,
+          ignore = {'W191'}
+        },
+        pycodestyle = {enabled = false},
+        pyflakes = {enabled = false},
+        pylint = {enabled = false},
+        mccabe = {enabled = false},
+      },
+    },
+  },
+}
 -- Example custom configuration for lua
 --
 -- Make runtime files discoverable to the server
