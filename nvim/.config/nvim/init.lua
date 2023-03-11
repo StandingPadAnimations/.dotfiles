@@ -387,6 +387,7 @@ require('lspconfig').pylsp.setup{
     },
   },
 }
+
 -- Example custom configuration for lua
 --
 -- Make runtime files discoverable to the server
