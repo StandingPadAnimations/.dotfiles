@@ -15,7 +15,7 @@ function _hyprland() {
 }
 
 function _set_up_shell() {
-	yes | sudo pacman -S starship lsd bat zoxide sshpass zsh zsh-syntax-highlighting zsh-autosuggestions
+	yes | sudo pacman -S starship lsd bat zoxide sshpass zsh zsh-syntax-highlighting zsh-autosuggestions atuin
 	
 	# Nerd font
 	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/BigBlueTerminal.zip
@@ -29,9 +29,10 @@ function _set_up_shell() {
 }
 
 function _set_up_general() {
-	yes | sudo pacman -S librewolf-bin firejail zathura zathura-pdf-mupdf neovim gimp 
+	yes | sudo pacman -S librewolf-bin firejail zathura zathura-pdf-mupdf neovim gimp git
 	stow firejail/
 	stow zathura/
 	stow nvim/
 	stow gimp/
+	stow git/
 }
