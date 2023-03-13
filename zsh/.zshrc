@@ -124,3 +124,4 @@ fi
 autoload bashcompinit
 bashcompinit
 source .profile
+eval "$(atuin init zsh)"
